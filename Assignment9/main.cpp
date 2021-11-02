@@ -72,10 +72,18 @@ void programOne(void)
 //PostCondition: 
 void programTwo(void)
 {
-    clearScreen();
-    cout << "\t2> Guess your number between 1 to 721." << endl;
-    cout << "\t" + string(100, char(196)) << endl;
-    /*stuff here*/
+    do
+    {
+        clearScreen();
+        srand(time(0));
+        int number = rand()% 1000;
+        int guessCount = 0;
+        cout << "\t2> Guess your number between 1 to " << number << "." << endl;
+        cout << "\n\tThink of a number from 1 to " << number << "." << endl;
+        pause("\n\tPress Enter to begin...");
+        guess(1, number, guessCount);
+        cout << endl;
+    } while (isRepeat("\tPlay again? (Y-yes or N-no)? "));
 }
 
 //PreCondition: NA
