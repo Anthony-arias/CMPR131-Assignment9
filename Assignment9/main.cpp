@@ -1,14 +1,16 @@
 // main.cpp
 
 // Team: Anthony, An, Van, Vincent, Nhan
-// Chapter 7:
+// Chapter 9:
 // 10/14/2021
 
 
 #include <iostream>
 #include <string>
+#include "optionOne.h"
 #include "optionTwo.h"
 #include "optionThree.h"
+#include "optionFour.h"
 #include "input.h"
 
 void displayMainMenu(void);
