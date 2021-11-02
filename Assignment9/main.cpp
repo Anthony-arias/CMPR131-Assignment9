@@ -56,13 +56,15 @@ void mainMenu(void)
 //PostCondition: 
 void programOne(void)
 {
-    clearScreen();
-    cout << "\t1> Pattern of astricks and blanks" << endl;
-    cout << "\t" + string(100, char(196)) << endl;
-    int n = inputInteger("\n\tEnter a positive number of astricks: ", true);
-    cout << endl;
-    pattern(0, n);
-    pause(" ");
+	do
+	{
+		clearScreen();
+		cout << "\t1> Pattern of astricks and blanks" << endl;
+		cout << "\t" + string(100, char(196)) << endl;
+		int n = inputInteger("\n\tEnter a positive number of astricks: ", true);
+		cout << endl;
+		pattern(0, n);
+	} while (isRepeat("\tPlay again? (Y-yes or N-no)? "));
 }
 
 
