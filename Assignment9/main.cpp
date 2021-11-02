@@ -59,7 +59,10 @@ void programOne(void)
     clearScreen();
     cout << "\t1> Pattern of astricks and blanks" << endl;
     cout << "\t" + string(100, char(196)) << endl;
-    /*stuff here*/
+    int n = inputInteger("\n\tEnter a positive number of astricks: ", true);
+    cout << endl;
+    pattern(0, n);
+    pause(" ");
 }
 
 
@@ -77,10 +80,25 @@ void programTwo(void)
 //PostCondition: 
 void programThree(void)
 {
-    clearScreen();
-    cout << "\t3> Tower of Hanoi (Recursive)" << endl;
-    cout << "\t" + string(100, char(196)) << endl;
-    /*stuff here*/
+    do
+    {
+        clearScreen();
+        cout << "\t3> Tower of Hanoi (Recursive)" << endl;
+        cout << "\t" + string(100, char(196)) << endl;
+        int numberOfRings = inputInteger("\n\tEnter the number of rings (1..64) to begin: ", 1, 64);
+        if (numberOfRings >= 10)
+            cout << "\n\tNote: The rings will be represented with numbers (1 is the smallest size and " << numberOfRings << " is the largest size)." << endl;
+        int count = 0;
+        Tower peg[3];
+        for (int i = numberOfRings; i >= 1; i--)
+            peg[0].push(i);
+        display(peg, numberOfRings);
+        towerOfHanoi(numberOfRings, numberOfRings, peg, 1, 3, 2, count);
+        if (count == 1)
+            cout << "\n\tThe computer has solved the game in " << count << " move." << endl;
+        else
+            cout << "\n\tThe computer has solved the game in " << count << " moves." << endl;
+    } while (isRepeat("\tPlay again? (Y-yes or N-no)? "));
 }
 
 //PreCondition: NA
