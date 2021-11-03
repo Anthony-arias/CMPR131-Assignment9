@@ -27,7 +27,7 @@ int guess(int low, int high, int &guessCount)
 		cin >> choice;
 		while (choice == 'n')
 		{
-			cout << "\n\tIs your number larger then " << midPoint << "? ";
+			cout << "\n\tIs your number larger than " << midPoint << "? ";
 			cin >> choice;
 			if (choice == 'y')
 				return guess(midPoint + 1, high, guessCount);
