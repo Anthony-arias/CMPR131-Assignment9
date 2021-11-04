@@ -53,44 +53,80 @@ void mainMenu(void)
 }
 
 //PreCondition: NA
-//PostCondition: 
+//PostCondition: Show the pattern of astricks and blanks
 void programOne(void)
 {
-    clearScreen();
-    cout << "\t1> Pattern of astricks and blanks" << endl;
-    cout << "\t" + string(100, char(196)) << endl;
-    /*stuff here*/
+	do
+	{
+		clearScreen();
+		cout << "\t1> Pattern of astricks and blanks" << endl;
+		cout << "\t" + string(100, char(196)) << endl;
+		int n = inputInteger("\n\tEnter a positive number of astricks: ", true);
+		cout << endl;
+		pattern(0, n);
+	} while (isRepeat("\tPlay again? (Y-yes or N-no)? "));
 }
 
 
 //PreCondition: NA
-//PostCondition: 
+//PostCondition: Guessing player's number
 void programTwo(void)
 {
-    clearScreen();
-    cout << "\t2> Guess your number between 1 to 721." << endl;
-    cout << "\t" + string(100, char(196)) << endl;
-    /*stuff here*/
+    do
+    {
+        clearScreen();
+        srand(time(0));
+        int number = rand()% 1000;
+        int guessCount = 0;
+        cout << "\t2> Guess your number between 1 to " << number << "." << endl;
+        cout << "\n\tThink of a number from 1 to " << number << "." << endl;
+        pause("\n\tPress Enter to begin...");
+        guess(1, number, guessCount);
+        cout << endl;
+    } while (isRepeat("\tPlay again? (Y-yes or N-no)? "));
 }
 
 //PreCondition: NA
-//PostCondition: 
+//PostCondition: Solving tower of Hanoi problem use recursive
 void programThree(void)
 {
-    clearScreen();
-    cout << "\t3> Tower of Hanoi (Recursive)" << endl;
-    cout << "\t" + string(100, char(196)) << endl;
-    /*stuff here*/
+    do
+    {
+        clearScreen();
+        cout << "\t3> Tower of Hanoi (Recursive)" << endl;
+        cout << "\t" + string(100, char(196)) << endl;
+        int numberOfRings = inputInteger("\n\tEnter the number of rings (1..64) to begin: ", 1, 64);
+        if (numberOfRings >= 10)
+            cout << "\n\tNote: The rings will be represented with numbers (1 is the smallest size and " << numberOfRings << " is the largest size)." << endl;
+        int count = 0;
+        Tower peg[3];
+        for (int i = numberOfRings; i >= 1; i--)
+            peg[0].push(i);
+        display(peg, numberOfRings);
+        towerOfHanoi(numberOfRings, numberOfRings, peg, 1, 3, 2, count);
+        if (count == 1)
+            cout << "\n\tThe computer has solved the game in " << count << " move." << endl;
+        else
+            cout << "\n\tThe computer has solved the game in " << count << " moves." << endl;
+    } while (isRepeat("\tPlay again? (Y-yes or N-no)? "));
 }
 
 //PreCondition: NA
-//PostCondition: 
+//PostCondition: Solving n-Queens problem use recursive
 void programFour(void)
 {
-    clearScreen();
-    cout << "\t4> Solve n-Queens" << endl;
-    cout << "\t" + string(100, char(196)) << endl;
-    /*stuff here*/
+	do
+	{
+		clearScreen();
+		cout << "\t4> Solve n-Queens" << endl;
+		cout << "\t" + string(100, char(196)) << endl;
+		vector<vector <char>> v;
+		int size = inputInteger("\n\tEnter the board dimension dxd (1..64): ", 1, 64);
+		int col = inputInteger("\n\tEnter the colume position (1.." + to_string(size) + ") of the first Queen on row 1: ", 1, size);
+		int queenCount = 0;
+        int row = 1;
+        //autoSolve_n_Queens(v, row, col, size, queenCount);
+	} while (isRepeat("\tPlay again? (Y-yes or N-no)? "));
 }
 
 
