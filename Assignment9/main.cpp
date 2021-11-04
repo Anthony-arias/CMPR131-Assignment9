@@ -6,6 +6,7 @@
 
 
 #include <iostream>
+#include <vector>
 #include <string>
 #include "optionOne.h"
 #include "optionTwo.h"
@@ -118,7 +119,22 @@ void programFour(void)
     clearScreen();
     cout << "\t4> Solve n-Queens" << endl;
     cout << "\t" + string(100, char(196)) << endl;
-    /*stuff here*/
+
+    int queenCount = 0;
+    int row = 1;
+    int n = inputInteger("\n\tEnter the board dimension nxn: ", 1, 100);
+    int inputColumn = inputInteger("\n\tEnter the column position (1.." + to_string(n) + ") of the first Queen on row 1: ", 1, n);
+    vector<vector <char>> board(n, vector<char>('_'));
+    if (n == 2 || n == 3)
+    {
+        cout << "\tNo solution.\n\n";
+        system("PAUSE");
+    }
+    else
+    {
+        autoSolve_n_Queens(board, row, inputColumn, n, queenCount);
+    }
+    pause("end");
 }
 
 
