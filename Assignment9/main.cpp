@@ -53,7 +53,7 @@ void mainMenu(void)
 }
 
 //PreCondition: NA
-//PostCondition: 
+//PostCondition: Show the pattern of astricks and blanks
 void programOne(void)
 {
 	do
@@ -69,7 +69,7 @@ void programOne(void)
 
 
 //PreCondition: NA
-//PostCondition: 
+//PostCondition: Guessing player's number
 void programTwo(void)
 {
     do
@@ -87,7 +87,7 @@ void programTwo(void)
 }
 
 //PreCondition: NA
-//PostCondition: 
+//PostCondition: Solving tower of Hanoi problem use recursive
 void programThree(void)
 {
     do
@@ -112,13 +112,21 @@ void programThree(void)
 }
 
 //PreCondition: NA
-//PostCondition: 
+//PostCondition: Solving n-Queens problem use recursive
 void programFour(void)
 {
-    clearScreen();
-    cout << "\t4> Solve n-Queens" << endl;
-    cout << "\t" + string(100, char(196)) << endl;
-    /*stuff here*/
+	do
+	{
+		clearScreen();
+		cout << "\t4> Solve n-Queens" << endl;
+		cout << "\t" + string(100, char(196)) << endl;
+		vector<vector <char>> v;
+		int size = inputInteger("\n\tEnter the board dimension dxd (1..64): ", 1, 64);
+		int col = inputInteger("\n\tEnter the colume position (1.." + to_string(size) + ") of the first Queen on row 1: ", 1, size);
+		int queenCount = 0;
+        int row = 1;
+        //autoSolve_n_Queens(v, row, col, size, queenCount);
+	} while (isRepeat("\tPlay again? (Y-yes or N-no)? "));
 }
 
 
