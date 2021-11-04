@@ -10,6 +10,8 @@
 
 using namespace std;
 
+//PreCondition: input low, high and guessCount
+//PostCondition: Guess a number
 int guess(int low, int high, int &guessCount)
 {
 	char choice;
