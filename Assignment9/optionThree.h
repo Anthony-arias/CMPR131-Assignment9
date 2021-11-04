@@ -13,7 +13,7 @@ using namespace std;
 
 
 
-// Precondition: intput tree towers and number of rings
+// Precondition: intput the array of towers (3 towers) and number of rings
 // Postcondition: display the content of three towers
 void display(Tower* peg, int numberOfRings)
 {
@@ -72,6 +72,8 @@ void display(Tower* peg, int numberOfRings)
 
 }
 
+// Precondition: intput n and numberOfRings are the number of rings, array of tower (3 towers), from_peg = 1, to_peg = 3, aux_peg = 2
+// Postcondition: Solving tower of Hanoi problem use recursive
 void towerOfHanoi(int n, int numberOfRings, Tower *peg, int from_peg, int to_peg, int aux_peg, int& count)
 {
 	int disk;
