@@ -8,6 +8,9 @@
 
 using namespace std;
 
+
+//PreCondition: input left position and number(lenghth) of astricks 
+//PostCondition: Show the pattern of astricks and blanks 
 void pattern(int left, int length)
 {
 	if (length == 0)
