@@ -201,7 +201,7 @@ public:
 			auto_moveQueen(--row);
 	}
 
-	// Precondition(s): None
+	// Precondition(s): NA
 	// Postcondition(s): Finds the smallest row that does not have a queen yet
 	int find_rowWithoutQueen()
 	{
