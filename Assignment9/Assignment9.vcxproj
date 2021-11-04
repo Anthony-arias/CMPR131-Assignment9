@@ -143,7 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="input.h" />
-    <ClInclude Include="optionFour.h" />
+    <ClInclude Include="nQueens.h" />
     <ClInclude Include="optionOne.h" />
     <ClInclude Include="optionThree.h" />
     <ClInclude Include="optionTwo.h" />

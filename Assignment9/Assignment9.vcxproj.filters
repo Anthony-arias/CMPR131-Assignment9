@@ -32,10 +32,10 @@
     <ClInclude Include="input.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="optionFour.h">
+    <ClInclude Include="Tower.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Tower.h">
+    <ClInclude Include="nQueens.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

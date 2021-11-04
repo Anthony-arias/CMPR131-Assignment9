@@ -10,7 +10,7 @@
 #include "optionOne.h"
 #include "optionTwo.h"
 #include "optionThree.h"
-#include "optionFour.h"
+#include "nQueens.h"
 #include "input.h"
 
 void displayMainMenu(void);
@@ -115,18 +115,34 @@ void programThree(void)
 //PostCondition: Solving n-Queens problem use recursive
 void programFour(void)
 {
-	do
-	{
-		clearScreen();
-		cout << "\t4> Solve n-Queens" << endl;
-		cout << "\t" + string(100, char(196)) << endl;
-		vector<vector <char>> v;
-		int size = inputInteger("\n\tEnter the board dimension dxd (1..64): ", 1, 64);
-		int col = inputInteger("\n\tEnter the colume position (1.." + to_string(size) + ") of the first Queen on row 1: ", 1, size);
-		int queenCount = 0;
-        int row = 1;
-        //autoSolve_n_Queens(v, row, col, size, queenCount);
-	} while (isRepeat("\tPlay again? (Y-yes or N-no)? "));
+    clearScreen();
+    cout << "\t4> Solve n-Queens (Recursive)" << endl;
+    cout << "\t" + string(100, char(196)) << endl;
+
+    int queenCount = 0;
+    int row = 1;
+    int n = inputInteger("\n\tEnter the board dimension nxn (1..12): ", 1, 12);
+    int inputColumn = inputInteger("\n\tEnter the column position (1.." + to_string(n) + ") of the first Queen on row 1: ", 1, n);
+    if (n == 2 || n == 3)
+    {
+        cout << "\tNo solution.\n\n";
+        system("PAUSE");
+    }
+    else if (n == 4 && inputColumn == 1 || n == 4 && inputColumn == 4)
+    {
+        cout << "\tNo solution.\n\n";
+        system("PAUSE");
+    }
+
+    else
+    {
+        nQueens board(n);
+        board.inputQueen(row, inputColumn);
+        board.auto_solve();
+        board.showSolution();
+        cout << "\n\n";
+        system("PAUSE");
+    }
 }
 
 
