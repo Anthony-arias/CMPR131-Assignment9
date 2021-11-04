@@ -10,7 +10,6 @@
 #include "optionOne.h"
 #include "optionTwo.h"
 #include "optionThree.h"
-#include "optionFour.h"
 #include "input.h"
 #include "nQueens.h"
 
