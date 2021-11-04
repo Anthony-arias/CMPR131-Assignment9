@@ -10,30 +10,10 @@
 
 using namespace std;
 
-char displayGameOptions(char& option);
 void displayBoard(vector< vector <char>> v);
 bool checkQueenCondition(vector< vector <char>>& v, int row, int col, int size);
 bool checkWinningCondition(vector<vector <char>>& v, int size);
-void inputQueen(vector< vector <char>>& v, int& row, int& col, int size, int& count);
-void removeQueen(vector< vector <char>>& v, int& row, int& col, int size, int& count);
 void autoSolve_n_Queens(vector<vector <char>>& v, int& row, int& inputColumn, int size, int& queenCount);
-
-
-// Precondition: valid char option
-// Postcondition: return the option from menu
-char displayGameOptions(char& option)
-{
-	cout << "\n\tGame Options";
-	cout << "\n\t" + string(60, char(205));
-	cout << "\n\tA> Place a queen";
-	cout << "\n\tB> Remove an existing queen";
-	cout << "\n\t" + string(60, char(196));
-	cout << "\n\t0> return";
-	cout << "\n\t" + string(60, char(205));
-	option = inputChar("\n\tOption: ");
-
-	return toupper(option);
-}
 
 
 // Precondition: valid nested char vector to display board game, valid row, valid column, the board's size
