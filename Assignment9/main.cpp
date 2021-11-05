@@ -2,7 +2,7 @@
 
 // Team: Anthony, An, Van, Vincent, Nhan
 // Chapter 9:
-// 10/14/2021
+// 11/04/2021
 
 
 #include <iostream>
@@ -150,7 +150,7 @@ void programFour(void)
 //PostCondition: displays main menu options
 void displayMainMenu(void)
 {
-    cout << "\n\tCMPR131 Chapter 9: Recursive Applications by Anthony, An, Van, Vincent, Nhan (10/21/21)" << endl;
+    cout << "\n\tCMPR131 Chapter 9: Recursive Applications by Anthony, An, Van, Vincent, Nhan (11/04/21)" << endl;
     cout << "\t" + string(100, char(205)) << endl;
     cout << "\t\t1> Pattern of astricks and blanks" << endl;
     cout << "\t\t2> Guess a number" << endl;
