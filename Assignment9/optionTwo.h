@@ -19,19 +19,19 @@ int guess(int low, int high, int &guessCount)
 	if (low == high)
 	{
 		guessCount++;
-		cout << "\n\tYour number must be " << high << endl;
+		cout << "\n\tYour number must be " << high << '.' << endl;
 	}
 	else if (low < high)
 	{
 		guessCount++;
 		midPoint = (low + high) / 2;
-		cout << "\n\tIs your number " << midPoint << "? (Y-yes or N-no) ";
-		cin >> choice;
-		while (choice == 'n')
+		//cout << "\n\tIs your number " << midPoint << "? (Y-yes or N-no) ";
+		choice = inputChar("\n\tIs your number " + to_string(midPoint) + "? (Y-yes or N-no) ", 'Y', 'N');
+		while (toupper(choice) == 'N')
 		{
-			cout << "\n\tIs your number larger than " << midPoint << "? (Y-yes or N-no) ";
-			cin >> choice;
-			if (choice == 'y')
+			//cout << "\n\tIs your number larger than " << midPoint << "? (Y-yes or N-no) ";
+			choice = inputChar("\n\tIs your number larger than " + to_string(midPoint) + "? (Y-yes or N-no) ", 'Y', 'N');
+			if (toupper(choice) == 'Y')
 				return guess(midPoint + 1, high, guessCount);
 			else
 				return guess(low, midPoint - 1, guessCount);
