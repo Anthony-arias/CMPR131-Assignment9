@@ -174,9 +174,6 @@ public:
 	// Postcondition(s): Moves the queen on the row to the next non-conflicted location
 	bool auto_moveQueen(int& row)
 	{
-		/*if (row <= 0)
-			return false;*/
-
 		bool queenShifted = false;
 		bool queenRemoved = false;
 		for (int column = 1; column <= size; column++)
